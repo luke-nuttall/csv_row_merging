@@ -1,0 +1,5 @@
+cycle.@id,bar.id,foo.id,foo.cycle.@id,foo.bar.id,foo.value
+1,-,3,1,5,10
+2,-,4,2,6,200
+-,5,-,-,-,75
+-,6,-,-,-,50
