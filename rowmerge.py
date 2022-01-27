@@ -1,6 +1,7 @@
 import logging
 import re
 from typing import Iterable, List, Tuple
+from argparse import ArgumentParser
 
 import pandas as pd
 
@@ -120,4 +121,8 @@ def transform_csv(input_path_or_buf, output_path_or_buf):
 
 
 if __name__ == '__main__':
-    transform_csv("test_data/official_input.csv", "out.csv")
+    parser = ArgumentParser(description="Merge related rows in CSV files from the hestia.earth platform.")
+    parser.add_argument('input', type=str, help="the CSV file to process")
+    parser.add_argument('output', type=str, help="filename where the output CSV will be written")
+    args = parser.parse_args()
+    transform_csv(args.input, args.output)
